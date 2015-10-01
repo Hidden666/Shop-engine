@@ -202,6 +202,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\APIControllerBase.cs" />
+    <Compile Include="Controllers\API\AuthenticationController.cs" />
     <Compile Include="Controllers\API\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
@@ -280,6 +281,8 @@
     <Content Include="Scripts\SPA\home\index.html" />
     <Content Include="Scripts\SPA\home\indexCtrl.js" />
     <Content Include="Scripts\SPA\home\rootCtrl.js" />
+    <Content Include="Scripts\SPA\layout\availableProduct.html" />
+    <Content Include="Scripts\SPA\layout\availableProduct.js" />
     <Content Include="Scripts\SPA\layout\topBar.html" />
     <Content Include="Scripts\SPA\layout\sideBar.directive.js" />
     <Content Include="Scripts\SPA\layout\sideBar.html" />
