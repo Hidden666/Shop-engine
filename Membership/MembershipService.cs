@@ -96,7 +96,7 @@ namespace Membership
 
             foreach (var aRole in roles)
             {
-                this.AddUserToRole(user,aRole);
+                this.AddUserToRole(user, aRole);
             }
 
             unitofWork.Commit();

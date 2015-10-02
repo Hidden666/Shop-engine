@@ -26,6 +26,7 @@ namespace Infrastructure.DomainToModelProfilers
 
             Mapper.CreateMap<Genre, GenreViewModel>()
                .ForMember(vm => vm.NumberOfMovies, map => map.MapFrom(g => g.Movie.Count()));
+
         }
     }
 }
