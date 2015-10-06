@@ -1,7 +1,7 @@
 ﻿(function (app) {
     'use strict';
 
-    app.directvie('topBar', topBar);
+    app.directive('topBar', topBar);
 
     function topBar() {
         return {

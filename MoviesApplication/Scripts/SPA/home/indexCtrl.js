@@ -3,7 +3,7 @@
 
     app.controller('indexCtrl', indexCtrl);
 
-    indexCtrl.$inject(['notificationService', 'apiService', '$scope']);
+    indexCtrl.$inject = ['notificationService', 'apiService', '$scope'];
 
     function indexCtrl(notificationService, apiService, $scope) {
         $scope.pageClass = 'page-home';

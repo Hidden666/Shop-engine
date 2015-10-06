@@ -13,8 +13,8 @@ using MoviesApplication.Models;
 
 namespace MoviesApplication.Controllers.API
 {
-    [Authorize(Roles="Admin")]
-    [RoutePrefix("api/Account")]
+    [Authorize(Roles = "Admin")]
+    [RoutePrefix("api/account")]
     public class AuthenticationController : APIControllerBase
     {
         private readonly IMembershipService membershipService;

@@ -1,7 +1,7 @@
 ﻿(function(app) {
     'use strict';
 
-    app.directvie('sideBar', sideBar);
+    app.directive('sideBar', sideBar);
 
     function sideBar() {
         return {

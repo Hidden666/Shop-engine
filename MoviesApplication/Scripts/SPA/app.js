@@ -1,9 +1,10 @@
 ﻿(function() {
 
     'use strict';
-    angular.module('homeCinema', ['common.core', 'common.ui']).config(config);
+    angular.module('homeCinema', ['common.core', 'common.ui']).config(config).run(run);
 
     config.$inject = ['$routeProvider'];
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
 
     function config($routeProvider) {
         $routeProvider
@@ -47,6 +48,31 @@
                 templateUrl: "scripts/spa/rental/rental.html",
                 controller: "rentStatsCtrl"
             }).otherwise({ redirectTo: "/" });
+    }
+
+    function run($rootScope, $location, $cookieStore, $http) {
+        $rootScope.repository = $cookieStore.get('repository') || {};
+        if ($rootScope.repository.loggedUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.repository.loggedUser.authdata;
+        }
+        $(document).ready(function() {
+            $(".fancybox").fancybox({
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+
+            $('.fancybox-media').fancybox({
+                openEffect: 'none',
+                closeEffect: 'none',
+                helpers: {
+                    media: {}
+                }
+            });
+
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
     }
 
 })();

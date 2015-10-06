@@ -10,6 +10,7 @@
         <title>Home Cinema Rental Application</title>
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/vendors")
     </head>
     <body ng-controller="rootCtrl">
         <script type="text/javascript" src="/Scripts/SPA/app.js"></script>
@@ -25,7 +26,6 @@
                 </div>
             </div>
         </div><!--/row-offcanvas -->
-        @Scripts.Render("~/bundles/vendors")
-        @Scripts.Render("~/bundles/SPA")
+        @Scripts.Render("~/bundles/spa")
     </body>
 </html>

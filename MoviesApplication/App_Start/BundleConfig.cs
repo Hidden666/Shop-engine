@@ -7,7 +7,6 @@ namespace MoviesApplication
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            #if DEBUG
                 bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                     "~/Scripts/Vendors/modernizr.js"));
 
@@ -61,16 +60,18 @@ namespace MoviesApplication
                     "~/Scripts/SPA/rental/rentStatsCtrl.js"));
 
                 bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/content/css/site.css",
-                    "~/content/css/bootstrap.css",
-                    "~/content/css/bootstrap-theme.css",
-                     "~/content/css/font-awesome.css",
-                    "~/content/css/morris.css",
-                    "~/content/css/toastr.css",
-                    "~/content/css/jquery.fancybox.css",
-                    "~/content/css/loading-bar.css"));
-
+                    "~/Content/css/site.css",
+                    "~/Content/css/bootstrap.css",
+                    "~/Content/css/bootstrap-theme.css",
+                     "~/Content/css/font-awesome.css",
+                    "~/Content/css/morris.css",
+                    "~/Content/css/toastr.css",
+                    "~/Content/css/jquery.fancybox.css",
+                    "~/Content/css/loading-bar.css"));
+            #if DEBUG
                 BundleTable.EnableOptimizations = false;
+            #else
+                BundleTable.EnableOptimizations = true;
             #endif
         }
     }
