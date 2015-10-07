@@ -21,7 +21,7 @@
         }
 
         function onGenresLoadCompleted(response) {
-            var genres = result.data;
+            var genres = response.data;
             Morris.Bar({
                 element: "genres-bar",
                 data: genres,

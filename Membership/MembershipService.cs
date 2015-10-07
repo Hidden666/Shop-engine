@@ -86,6 +86,8 @@ namespace Membership
             {
                 UserName = username,
                 Email = email,
+                IsLocked = false,
+                Salt = passwordSalt,
                 HashedPassword = encryptionService.EncryptPassword(password, passwordSalt),
                 DateCreated = DateTime.Now
             };

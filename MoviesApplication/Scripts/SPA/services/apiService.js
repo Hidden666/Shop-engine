@@ -8,7 +8,7 @@
     function apiService($http, $location, notifiationService, $rootScope)
     {
         function get(url, config, onSuccess, onError) {
-            return $http.get(url, config).then(onSuccess(response), function onErrorInt(error) {
+            return $http.get(url, config).then(onSuccess, function onErrorInt(error) {
                 if(error.status == '401') {
                     notifiationService.displayError('Authentication Required'); //// Language variable
                     $rootScope.previousState = $location.path();
@@ -21,7 +21,7 @@
         };
         
         function post(url, request, onSuccess, onError) {
-            return $http.get(url, request).then(onSuccess(response), function onErrorInt(error) {
+            return $http.post(url, request).then(onSuccess, function onErrorInt(error) {
                 if (error.status == '401') {
                     notifiationService.displayError('Authentication Required'); //// Language variable
                     $rootScope.previousState = $location.path();
