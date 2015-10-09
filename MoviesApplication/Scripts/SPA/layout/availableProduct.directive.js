@@ -1,7 +1,7 @@
 ﻿(function (app) {
     'use strict';
 
-    app.directvie('availableProduct', availableProduct);
+    app.directive('availableProduct', availableProduct);
 
     function availableProduct() {
         return {

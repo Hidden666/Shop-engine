@@ -104,6 +104,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MoviesDBEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pagination.cs" />
     <Compile Include="Rental.cs">
       <DependentUpon>MoviesDBEntities.tt</DependentUpon>
     </Compile>

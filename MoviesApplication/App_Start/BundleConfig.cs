@@ -43,7 +43,7 @@ namespace MoviesApplication
                     "~/Scripts/SPA/layout/sideBar.directive.js",
                     "~/Scripts/SPA/layout/customPager.directive.js",
                     "~/Scripts/SPA/directives/rating.directive.js",
-                    "~/Scripts/SPA/directives/availableMovie.directive.js",
+                    "~/Scripts/SPA/layout/availableProduct.directive.js",
                     "~/Scripts/SPA/account/loginCtrl.js",
                     "~/Scripts/SPA/account/registerCtrl.js",
                     "~/Scripts/SPA/home/rootCtrl.js",

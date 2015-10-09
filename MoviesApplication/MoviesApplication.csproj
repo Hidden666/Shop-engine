@@ -187,6 +187,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\APIControllerBase.cs" />
     <Compile Include="Controllers\API\AuthenticationController.cs" />
+    <Compile Include="Controllers\API\CustomerController.cs" />
     <Compile Include="Controllers\API\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
@@ -196,8 +197,7 @@
     </Compile>
     <Compile Include="Handlers\AuthorizationHandler.cs" />
     <Compile Include="Mappings\DomainToViewModelProfile.cs" />
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\GenreViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MovieViewModel.cs" />
@@ -206,6 +206,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Validators\CustomerViewModelValidator.cs" />
     <Compile Include="Validators\LoginViewModelValidator.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
@@ -265,7 +266,7 @@
     <Content Include="Scripts\SPA\home\indexCtrl.js" />
     <Content Include="Scripts\SPA\home\rootCtrl.js" />
     <Content Include="Scripts\SPA\layout\availableProduct.html" />
-    <Content Include="Scripts\SPA\layout\availableProduct.js" />
+    <Content Include="Scripts\SPA\layout\availableProduct.directive.js" />
     <Content Include="Scripts\SPA\layout\topBar.html" />
     <Content Include="Scripts\SPA\layout\sideBar.directive.js" />
     <Content Include="Scripts\SPA\layout\sideBar.html" />
