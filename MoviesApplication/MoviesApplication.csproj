@@ -262,11 +262,14 @@
     <Content Include="Scripts\SPA\account\registerCtrl.js" />
     <Content Include="Scripts\SPA\account\loginCtrl.js" />
     <Content Include="Scripts\SPA\app.js" />
+    <Content Include="Scripts\SPA\customers\customers.html" />
     <Content Include="Scripts\SPA\home\index.html" />
     <Content Include="Scripts\SPA\home\indexCtrl.js" />
     <Content Include="Scripts\SPA\home\rootCtrl.js" />
     <Content Include="Scripts\SPA\layout\availableProduct.html" />
     <Content Include="Scripts\SPA\layout\availableProduct.directive.js" />
+    <Content Include="Scripts\SPA\layout\customPager.directive.js" />
+    <Content Include="Scripts\SPA\layout\pager.html" />
     <Content Include="Scripts\SPA\layout\topBar.html" />
     <Content Include="Scripts\SPA\layout\sideBar.directive.js" />
     <Content Include="Scripts\SPA\layout\sideBar.html" />
@@ -312,7 +315,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
-    <Folder Include="Scripts\SPA\customers\" />
     <Folder Include="Scripts\SPA\directives\" />
     <Folder Include="Scripts\SPA\movies\" />
     <Folder Include="Scripts\SPA\rental\" />

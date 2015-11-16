@@ -70,4 +70,4 @@ namespace MoviesApplication.Controllers.API
             });
         }
     }
-}
+} 
