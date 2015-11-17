@@ -9,6 +9,7 @@ using System.Web.Routing;
 using AutoMapper;
 using Data.Interfaces;
 using Infrastructure;
+using MoviesApplication.Extensions;
 using MoviesApplication.Models;
 
 namespace MoviesApplication.Controllers.API
@@ -18,11 +19,38 @@ namespace MoviesApplication.Controllers.API
     public class CustomerController : APIControllerBase
     {
         private readonly IEntityBaseRepo<Customer> customerRepository;
+        private readonly IUnitOfWork unitOfWork;
 
         public CustomerController(IEntityBaseRepo<Customer> customerRepository, IUnitOfWork unitOfWork, IEntityBaseRepo<Error> errorRepostiroy)
             : base(unitOfWork, errorRepostiroy)
         {
             this.customerRepository = customerRepository;
+            this.unitOfWork = unitOfWork;
+        }
+
+        [HttpPost]
+        [Route("update")]
+        public HttpResponseMessage Update(HttpRequestMessage request, CustomerViewModel customer)
+        {
+            return this.CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (ModelState.IsValid)
+                {
+                    Customer tempCustomer = customerRepository.GetSingle(customer.Id);
+                    tempCustomer.UpdateCustomer(customer);
+                    unitOfWork.Commit();
+
+                    response = request.CreateResponse(HttpStatusCode.OK);
+                }
+                else
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest,
+                        ModelState.Keys.SelectMany(k => ModelState[k].Errors).Select(m => m.ErrorMessage).ToArray());
+                }
+
+                return response;
+            });
         }
 
         [HttpGet]
@@ -61,10 +89,10 @@ namespace MoviesApplication.Controllers.API
                     Page = currentPage,
                     TotalCount = totalCustNom,
                     TotalPages = (int)Math.Ceiling((decimal)totalCustNom / currentpageSize),
-                    items = customerVM
+                    Items = customerVM
                 };
 
-                response = request.CreateResponse<IEnumerable<CustomerViewModel>>(HttpStatusCode.OK, customerVM);
+                response = request.CreateResponse<Pagination<CustomerViewModel>>(HttpStatusCode.OK, pagedVMSet);
 
                 return response;
             });

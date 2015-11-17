@@ -23,7 +23,7 @@ namespace Data
         }
 
         public MoviesDBEntities DataContext {
-            get { return dataContext ?? (dataContext = dbFactory.Init()); }
+            get { return dataContext ?? (dataContext = this.dbFactory.Init()); }
         }
 
         public IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties)

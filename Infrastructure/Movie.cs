@@ -13,8 +13,8 @@ namespace Infrastructure
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Movie : IEntityBase
+
+    public partial class Movie : IEntityBase 
     {
         public Movie()
         {

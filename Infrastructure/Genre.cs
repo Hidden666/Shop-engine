@@ -13,7 +13,7 @@ namespace Infrastructure
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Genre : IEntityBase
     {
         public Genre()

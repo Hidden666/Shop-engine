@@ -10,11 +10,11 @@ namespace Infrastructure
     {
         public int Page { get; set; }
 
-        public IEnumerable<T> items; 
+        public IEnumerable<T> Items; 
 
         public int Count
         {
-            get { return (items != null) ? items.Count() : 0; }
+            get { return (Items != null) ? Items.Count() : 0; }
         }
 
         public int TotalPages { get; set; }

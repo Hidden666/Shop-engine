@@ -13,8 +13,8 @@ namespace Infrastructure
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Role : IEntityBase
+
+    public partial class Role : IEntityBase 
     {
         public Role()
         {

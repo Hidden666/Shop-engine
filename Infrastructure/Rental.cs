@@ -13,8 +13,8 @@ namespace Infrastructure
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Rental : IEntityBase
+
+    public partial class Rental : IEntityBase 
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }

@@ -26,7 +26,7 @@ namespace Infrastructure
         public string LastName { get; set; }
         public string Email { get; set; }
         public string IdentityCard { get; set; }
-        public int UniqueKey { get; set; }
+        public System.Guid UniqueKey { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public string Mobile { get; set; }
         public Nullable<System.DateTime> RegistrationDate { get; set; }

@@ -14,10 +14,10 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="IdentityCard" Type="nvarchar" MaxLength="100" />
-          <Property Name="UniqueKey" Type="int" Nullable="false" />
           <Property Name="DateOfBirth" Type="datetime" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="40" />
           <Property Name="RegistrationDate" Type="datetime" />
+          <Property Name="UniqueKey" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="Error">
           <Key>
@@ -217,7 +217,7 @@
           <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IdentityCard" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="UniqueKey" Type="Int32" Nullable="false" />
+          <Property Name="UniqueKey" Type="Guid" Nullable="false" />
           <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
           <Property Name="Mobile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="RegistrationDate" Type="DateTime" Precision="3" />

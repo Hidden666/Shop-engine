@@ -13,7 +13,7 @@ namespace Infrastructure
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class UserRole : IEntityBase
     {
         public int Id { get; set; }
