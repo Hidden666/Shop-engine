@@ -12,7 +12,9 @@
             login: login,
             register: register,
             saveCredentials: saveCredentials,
-            isUserLoggedIn: isUserLoggedIn
+            isUserLoggedIn: isUserLoggedIn,
+            removeCredentials: removeCredentials,
+            getUserName: getUserName
         };
 
         function login(user, completed) {
@@ -40,12 +42,17 @@
             $rootScope.repository = {};
             $cookieStore.remove('repository');
             $http.defaults.headers.common.Authorization = '';
+            notificationService.displayInfo("Successfully logged out");
         };
 
         function failed(response) { notificationService.displayError(response.data); };
 
         function isUserLoggedIn() {
             return $rootScope.repository.loggedUser != null;
+        }
+
+        function getUserName() {
+            return $rootScope.repository.loggedUser.username;
         }
 
         return service;

@@ -267,6 +267,7 @@
     <Content Include="Scripts\SPA\customers\customers.html" />
     <Content Include="Scripts\SPA\customers\customersCtrl.js" />
     <Content Include="Scripts\SPA\customers\editCustomerModal.html" />
+    <Content Include="Scripts\SPA\customers\register.html" />
     <Content Include="Scripts\SPA\home\index.html" />
     <Content Include="Scripts\SPA\home\indexCtrl.js" />
     <Content Include="Scripts\SPA\home\rootCtrl.js" />

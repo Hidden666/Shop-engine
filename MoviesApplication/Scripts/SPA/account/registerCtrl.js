@@ -19,7 +19,6 @@
             if (result.data.success) {
                 membershipService.saveCredentials($scope.user);
                 notificationService.displaySuccess('Welcome ' + $scope.user.username);
-                $scope.userData.displayUserInfo();
                 if ($rootScope.previousState)
                     $location.path($rootScope.previousState);
                 else
