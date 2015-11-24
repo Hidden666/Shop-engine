@@ -28,6 +28,50 @@ namespace MoviesApplication.Controllers.API
             this.unitOfWork = unitOfWork;
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("register")]
+        public HttpResponseMessage Register(HttpRequestMessage request, CustomerViewModel customer)
+        {
+            return this.CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                if (ModelState.IsValid)
+                {
+                    if (customerRepository.FindBy(customerToFind =>
+                    {
+                        return customerToFind.Email.Equals(customer.Email) ||
+                               customerToFind.IdentityCard.Equals(customer.IdentityCard);
+                    }
+                    ).Count() != 0)
+                    {
+                        ModelState.AddModelError("Invalid User", "User with such Email/IC exists");
+                        response = request.CreateResponse(HttpStatusCode.BadRequest,
+                        ModelState.Keys.SelectMany(k => ModelState[k].Errors).Select(m => m.ErrorMessage).ToArray());
+                    }
+                    else
+                    {
+                        Customer tempCustomer = new Customer();
+                        tempCustomer.UpdateCustomer(customer);
+                        customerRepository.Add(tempCustomer);
+                        unitOfWork.Commit();
+
+                        response = request.CreateResponse(HttpStatusCode.OK,
+                            Mapper.Map<Customer, CustomerViewModel>(tempCustomer));
+                    }
+                  
+                }
+                else
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest,
+                        ModelState.Keys.SelectMany(k => ModelState[k].Errors).Select(m => m.ErrorMessage).ToArray());
+                }
+
+                return response;
+            });
+        }
+
         [HttpPost]
         [Route("update")]
         public HttpResponseMessage Update(HttpRequestMessage request, CustomerViewModel customer)

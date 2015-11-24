@@ -49,7 +49,7 @@ namespace MoviesApplication
                     "~/Scripts/SPA/home/rootCtrl.js",
                     "~/Scripts/SPA/home/indexCtrl.js",
                     "~/Scripts/SPA/customers/customersCtrl.js",
-                    "~/Scripts/SPA/customers/customersRegCtrl.js",
+                    "~/Scripts/SPA/customers/customerRegCtrl.js",
                     "~/Scripts/SPA/customers/customerEditCtrl.js",
                     "~/Scripts/SPA/movies/moviesCtrl.js",
                     "~/Scripts/SPA/movies/movieAddCtrl.js",

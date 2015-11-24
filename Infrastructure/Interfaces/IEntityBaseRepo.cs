@@ -13,7 +13,7 @@ namespace Data.Interfaces
         IQueryable<T> All { get; }
         IQueryable<T> GetAll();
         T GetSingle(int id);
-        IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> FindBy(Func<T, bool> predicate);
         void Add(T entity);
         void Delete(T entity);
         void Edit(T entity);

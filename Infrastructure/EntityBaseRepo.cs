@@ -51,9 +51,9 @@ namespace Data
             return this.GetAll().FirstOrDefault(x => x.Id == id);
         }
 
-        public virtual IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        public virtual IEnumerable<T> FindBy(Func<T, bool> predicate)
         {
-            return this.GetAll().Where(predicate);
+            return this.GetAll().AsEnumerable().Where(predicate);
         }
 
         public virtual void Add(T entity)

@@ -41,7 +41,8 @@
             $modal.open({
                 templateUrl: 'scripts/spa/customers/editCustomerModal.html',
                 controller: 'customerEditCtrl',
-                scope: $scope
+                scope: $scope,
+                backdrop : 'static'
         }).result.then(function($scope) {
                 clearSearch();
             }, function() {});
