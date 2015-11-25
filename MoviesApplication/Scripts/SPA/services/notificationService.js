@@ -12,7 +12,7 @@
             "fadeIn": 300,
             "fadeOut": 1000,
             "timeOut": 3000,
-            "extendedTimeOut": 1000
+            "extendedTimeOut": 3000
         };
 
         var service = {

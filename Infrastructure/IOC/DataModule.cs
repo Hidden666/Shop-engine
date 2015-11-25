@@ -14,7 +14,6 @@ namespace Infrastructure.IOC
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<MoviesDBEntities>().As<DbContext>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
 

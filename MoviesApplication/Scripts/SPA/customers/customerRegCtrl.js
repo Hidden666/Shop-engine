@@ -10,10 +10,9 @@
         $scope.newCustomer = {};
 
         $scope.register = register;
-
         $scope.openDatePicker = openDatePicker;
         $scope.dateOptions = {
-            formatYear: 'yy',
+            formatYear: 'yyyy',
             startingDay: 1
         };
         $scope.datepicker = {};
@@ -25,12 +24,11 @@
         }
 
         function registerCustomerSucceded(response) {
-            console.log(response);
             var customerRegistered = response.data;
             notificationService.displaySuccess($scope.newCustomer.LastName + ' has been successfully registed');
             notificationService.displayInfo('Check ' + customerRegistered.UniqueKey + ' for reference number');
+
             $scope.newCustomer = {};
-            $scope.addCustomerForm.$setPristine();
             $scope.addCustomerForm.reset();
         }
 
