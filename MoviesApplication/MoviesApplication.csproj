@@ -288,6 +288,7 @@
     <Content Include="Scripts\SPA\services\apiService.js" />
     <Content Include="Scripts\SPA\services\membershipService.js" />
     <Content Include="Scripts\SPA\services\notificationService.js" />
+    <Content Include="Scripts\SPA\validators\dateValidator.js" />
     <Content Include="Scripts\Vendors\angucomplete-alt.min.js" />
     <Content Include="Scripts\Vendors\angular-base64.js" />
     <Content Include="Scripts\Vendors\angular-cookies.js" />

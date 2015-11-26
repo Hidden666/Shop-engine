@@ -57,7 +57,8 @@ namespace MoviesApplication
                     "~/Scripts/SPA/movies/movieEditCtrl.js",
                     "~/Scripts/SPA/controllers/rentalCtrl.js",
                     "~/Scripts/SPA/rental/rentMovieCtrl.js",
-                    "~/Scripts/SPA/rental/rentStatsCtrl.js"));
+                    "~/Scripts/SPA/rental/rentStatsCtrl.js",
+                    "~/Scripts/SPA/validators/dateValidator.js"));
 
                 bundles.Add(new StyleBundle("~/Content/css").Include(
                     "~/Content/css/site.css",
