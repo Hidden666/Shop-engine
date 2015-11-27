@@ -7,6 +7,10 @@ body {
     background-color: whitesmoke;
 }
 
+top-bar {
+    background-color: white;
+}
+
 #sidebar {
     width: inherit;
     min-width: 220px;
@@ -19,13 +23,27 @@ body {
     overflow-x: hidden;
 }
 
+#header {
+    height: 150px;
+    overflow: auto;
+    background-color: #e3DACA;
+}
+
 #main {
     height: 100%;
     overflow: auto;
     background-color: whitesmoke;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
 }
 
-.movie {
+#footer {
+    text-align: center;
+    color: #777;
+    padding-top: 10px;
+    height: 200px;
+    top: calc(100% - 200px);
 }
 
 .panel-body h4 {
@@ -104,7 +122,6 @@ ul.pagination > li
 }
 
 
-
 .shortInputSearch {
     width: 300px !important;
     float: right !important;
@@ -175,7 +192,22 @@ ul.pagination > li
 .userinfo {
     margin-right: 10px;
     font-size: large;
-    background-color: white;
+    color: black !important;
+}
+
+.userinfo p {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    line-height: 20px;
+    }
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.button-right-end {
+    margin-right: 20px;
 }
 
 /*Validation Errors*/
@@ -263,4 +295,18 @@ ul.pagination > li
 
 .red {
     color: red;
+}
+
+.form-group-phone p{
+    float: left;
+    width: 10%;
+    padding-top: 7px;
+}
+
+.form-group-phone input{
+    width: 90%;
+}
+
+.dropdown-menu {
+    min-width: 200px !important;
 }

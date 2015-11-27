@@ -5,14 +5,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand active" href="#/">Home Cinema</a>
+        <side-bar>Menu</side-bar>
     </div>
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="#about">About<i class="fa fa-info-circle fa-fw pull-right"></i></a></li>
+            <li><a href="#/">Home<i class="fa fa-home fa-fw pull-left"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="#/movies">Sklep<i class="fa fa-shopping-cart fa-fw pull-left"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="#about">About<i class="fa fa-info-circle fa-fw pull-left"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-if="!userData.isUserLoggedIn()">
+            <li><a class="button-right-end" href="#/customers/register">Zarejestruj<i class="fa fa-user-plus fa-fw pull-left"></i></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-if="userData.isUserLoggedIn()">
-            <li class="userinfo"><a href="#/">{{userData.displayUserInfo()}}<i class="fa fa-user fa-fw"></i></a></li>
+            <li><a href="" class="button-right-end" ng-click="userData.logout();" ng-if="userData.isUserLoggedIn()">Wyloguj<i class="fa fa-sign-out fa-fw pull-left"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-if="!userData.isUserLoggedIn()">
+            <li><a ng-href="#/login" ng-if="!userData.isUserLoggedIn()">Zaloguj<i class="fa fa-sign-in fa-fw pull-left"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-if="userData.isUserLoggedIn()">
+            <li class="userinfo"><p>{{userData.displayUserInfo()}}<i class="fa fa-user fa-fw"></i></p></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-if="userData.isUserLoggedIn()">
+            <li class="userinfo"><p>{{userData.displayUserInfo()}}<i class="fa fa-user fa-fw"></i></p></li>
         </ul>
     </div>
 </div>

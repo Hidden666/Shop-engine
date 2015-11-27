@@ -1,6 +1,5 @@
-﻿<hr />
-<div class="row">
-    <div class="col-md-8">
+﻿<div class="row">
+    <div >
         <div class="panel panel-primary" id="panelLatestMovies">
             <div class="panel-heading">
                 <h3 class="panel-title">Latest Movies Released</h3>
@@ -34,33 +33,13 @@
                                 </div>
                                 <br />
                             </div>
-                        </div>
+                        </div>movies genr
                         <div class="panel-footer">
                           <!--  <span component-rating="{{movie.Rating}}"></span> -->
                             <a class="fancybox-media pull-right" ng-href="{{movie.TrailerURI}}">Trailer<i class="fa fa-video-camera fa-fw"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-success" id="panelMovieGenres">
-            <div class="panel-heading">
-                <h3 class="panel-title">Movies Genres</h3>
-            </div>
-
-            <div class="panel-body">
-                <div ng-if="loadingGenres">
-                    <div class="col-xs-4"></div>
-                    <div class="col-xs-4"><i class="fa fa-refresh fa-5x fa-spin"></i> <label class="label label-primary">Loading Genres..</label></div>
-                    <div class="col-xs-4"></div>
-                </div>
-                <div id="genres-bar"></div>
-            </div>
-            <div class="panel-footer">
-                <p class="text-center"><em>Wanna add a new Movie? Head over to the add movie form.</em></p>
-                <p class="text-center"><a ng-href="#/movies/add" class="btn btn-default">Add new Movie</a></p>
             </div>
         </div>
     </div>

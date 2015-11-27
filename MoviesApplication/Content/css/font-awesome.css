@@ -1765,6 +1765,9 @@
 .fa-neuter:before {
   content: "\f22c";
 }
+.fa-shopping-bag:before {
+   content: "\f290"; 
+}
 .fa-facebook-official:before {
   content: "\f230";
 }
