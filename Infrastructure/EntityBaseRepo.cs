@@ -15,7 +15,7 @@ namespace Data
     {
         private MoviesDBEntities dataContext;
 
-        private readonly IDbFactory dbFactory;
+        private readonly IDbFactory dbFactory; 
 
         public EntityBaseRepo(IDbFactory dbFactory)
         {
@@ -23,7 +23,7 @@ namespace Data
         }
 
         public MoviesDBEntities DataContext {
-            get { return dataContext ?? (dataContext = this.dbFactory.Init()); }
+            get { return dataContext ?? (this.dataContext = dbFactory.Init()); }
         }
 
         public IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties)
@@ -35,7 +35,7 @@ namespace Data
             }
             return querry;
         }
-
+         
         public virtual IQueryable<T> All
         {
             get { return this.GetAll(); }
@@ -51,9 +51,9 @@ namespace Data
             return this.GetAll().FirstOrDefault(x => x.Id == id);
         }
 
-        public virtual IEnumerable<T> FindBy(Func<T, bool> predicate)
+        public virtual IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
         {
-            return this.GetAll().AsEnumerable().Where(predicate);
+            return this.GetAll().Where(predicate);
         }
 
         public virtual void Add(T entity)

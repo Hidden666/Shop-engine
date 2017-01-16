@@ -14,6 +14,11 @@ namespace Data
             GC.SuppressFinalize(this);
         }
 
+        ~Disposable()
+        {
+            this.Dispose(false);
+        }
+
         protected abstract void DisposeCore();
 
         private bool isDisposed;
@@ -25,7 +30,6 @@ namespace Data
                 this.DisposeCore();
             }
             this.isDisposed = true;
-
         }
     }
 }

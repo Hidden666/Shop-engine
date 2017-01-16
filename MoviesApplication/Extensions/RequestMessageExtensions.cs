@@ -15,7 +15,7 @@ namespace MoviesApplication.Extensions
             return request.GetService<IMembershipService>();
         }
 
-        private static TService GetService<TService>(this HttpRequestMessage request)
+        private static TService GetService<TService>(this HttpRequestMessage request) 
         {
             IDependencyScope dependencyScope = request.GetDependencyScope();
             TService service = (TService)dependencyScope.GetService(typeof(TService));
